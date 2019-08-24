@@ -1,0 +1,99 @@
+$color-blue: #4673ab;
+$color-orange: #ff5816;
+$color-red-lighten: #ff743d;
+$color-gray: #a7a9af;
+$main-font-size: 13px;
+$color-gray-lighten: #e3e5eb;
+$color-gray-middle: #7f8686;
+$color-gray-last: #dbdee6;
+
+@mixin tel($url, $padding) {
+	background-image: $url;
+	background-repeat: no-repeat;
+	padding-left: $padding;
+	margin-top: 4px;
+}
+
+@mixin id-headers($width, $height) {
+	margin-top: 33px;
+	width: $width;
+	height: $height;
+	position: relative;
+}
+
+@mixin position-abs($top, $left, $right, $bottom) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin font-stylez($size, $weight, $style) {
+	font-size: $size;
+	font-weight: $weight;
+	font-style: $style;
+}
+
+@mixin box-size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin background-pos($image, $repeat, $pos) {
+	background-image: $image;
+	background-repeat: $repeat;
+	background-position: $pos;
+}
+
+@mixin font-declaration($style, $weight, $url, $url1, $url2, $url3, $url4, $url5, $url6, $url7) {
+	font-family: 'Roboto';
+  font-style: $style;
+  font-weight: $weight;
+  src: $url; /* IE9 Compat Modes */
+  src: $url1, $url2, $url3, $url4, $url5 $url6, $url7;
+}
+
+@mixin button-style($radius, $text, $padheight, $padwidth, $color, $bcolor, $border-color) {
+	border-radius: $radius;
+	cursor: pointer;
+	outline-width: 0;
+	text-transform: $text;
+	padding: $padheight $padwidth;
+	color: $color;
+	background-color: $bcolor;
+	border-bottom: 4px $border-color solid;
+}
+
+
+%forFlex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+%sliders {
+	z-index: 201;
+	cursor: pointer;
+	outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+%info-tyk {
+	text-decoration: underline;
+	color: $color-blue;
+	cursor: pointer;
+	margin-top: 4px;
+}
+
+%days {
+	@include box-size(50px, 32px);
+	@include font-stylez($main-font-size, 300, normal);
+	z-index: 1;
+	text-align: center;
+	span {
+		@include font-stylez(20px, 500, normal);
+		color: $color-orange;
+	}
+}
